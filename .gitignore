@@ -1,0 +1,6 @@
+# engagement notes are client-confidential and must not be published
+private/
+
+.DS_Store
+__pycache__/
+*.pyc

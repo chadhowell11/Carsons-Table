@@ -1,0 +1,40 @@
+const IMG = {
+  dessert:"assets/img/dessert.webp",
+  dessert_t:"assets/img/dessert-thumb.webp",
+  drink:"assets/img/drink.webp",
+  drink_t:"assets/img/drink-thumb.webp",
+  pontchartrain:"assets/img/pontchartrain.webp",
+  pontchartrain_t:"assets/img/pontchartrain-thumb.webp",
+  firecracker:"assets/img/firecracker.webp",
+  firecracker_t:"assets/img/firecracker-thumb.webp",
+  meatballs:"assets/img/meatballs.webp",
+  meatballs_t:"assets/img/meatballs-thumb.webp",
+  breadpudding:"assets/img/breadpudding.webp",
+  breadpudding_t:"assets/img/breadpudding-thumb.webp",
+  tuna:"assets/img/tuna.webp",
+  tuna_t:"assets/img/tuna-thumb.webp",
+  peppers:"assets/img/peppers.webp",
+  peppers_t:"assets/img/peppers-thumb.webp",
+  wedge:"assets/img/wedge.webp",
+  wedge_t:"assets/img/wedge-thumb.webp",
+  crabcakes:"assets/img/crabcakes.webp",
+  crabcakes_t:"assets/img/crabcakes-thumb.webp",
+  berryblush:"assets/img/berryblush.webp",
+  berryblush_t:"assets/img/berryblush-thumb.webp",
+  oysters:"assets/img/oysters.webp",
+  oysters_t:"assets/img/oysters-thumb.webp",
+  poboy:"assets/img/poboy.webp",
+  poboy_t:"assets/img/poboy-thumb.webp",
+  redfish:"assets/img/redfish.webp",
+  redfish_t:"assets/img/redfish-thumb.webp",
+  soup:"assets/img/soup.webp",
+  soup_t:"assets/img/soup-thumb.webp"
+};
+
+const PLATES = [
+  {k:"pontchartrain", n:"Pontchartrain", m:"Fried softshell crab, honey-roasted almonds and pecans, hollandaise", cls:"lg", tab:"dinner", go:"d-ent"},
+  {k:"firecracker",   n:"Firecracker Shrimp", m:"Freshly fried, spicy chili aioli", cls:"", tab:"dinner", go:"d-app"},
+  {k:"drink",         n:"Rosa Maria", m:"Honeysuckle vodka, rosemary, sparkling wine", cls:"tall", tab:"bar", go:"b-sig"},
+  {k:"meatballs",     n:"Meatballs", m:"Hand rolled, marinara, toasted garlic bread", cls:"", tab:"dinner", go:"d-app"},
+  {k:"dessert",       n:"Chocolate Creme Brulee", m:"Burnt sugar crust, raspberries, whipped cream", cls:"", tab:"dinner", go:"d-des"}
+];

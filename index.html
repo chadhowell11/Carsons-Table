@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Carson's Table">
+<meta name="theme-color" content="#14261C">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="icon" href="assets/img/icon-180.png">
+<title>Carson's Table — Website Concept (Demo)</title>
+<meta name="description" content="Private design concept. Not the official website of Carson's Table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Karla:ital,wght@0,300..700;1,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div id="demobar">
+  <span>Concept mockup for Carson's Table &mdash; <b>everything here is clickable</b>, but no orders or reservations are actually sent.</span>
+  <button id="fsBtn" style="position:static;transform:none;border:1px solid rgba(214,224,209,.35);border-radius:3px;padding:3px 10px;font-size:12px;color:#CFDAC9">Full screen</button>
+  <button onclick="this.parentNode.remove()" aria-label="Dismiss notice">&times;</button>
+</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <img src="assets/img/wordmark.webp" alt="Carson's Table, Mandeville">
+    </a>
+    <nav class="main">
+      <a href="#menu">Menus</a>
+      <a href="#wine">Wine &amp; bar</a>
+      <a href="#reserve">Reservations</a>
+      <a href="#about">Our table</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="hdr-actions">
+      <button class="btn btn-ghost cartbtn" id="cartBtn" aria-label="Open your order">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16l-1.4 12.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="lbl">Order</span><span class="count" id="cartCount">0</span>
+      </button>
+      <a class="btn btn-brass" href="#reserve">Reserve a table</a>
+    </div>
+    <button class="burger" aria-label="Jump to menus" onclick="document.getElementById('menu').scrollIntoView()">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero" id="top" style="--heroimg:url(assets/img/exterior.webp)">
+  <div class="glow"></div>
+  <div class="wrap hero-inner">
+    <h1><img src="assets/img/wordmark.webp" alt="Carson's Table, Mandeville"></h1>
+    <p class="lede">Scratch-kitchen Louisiana cooking at the foot of the Mandeville Trailhead. Hand-cut steaks, Gulf seafood, and a wine list built by our sommelier. <em>The table is set.</em></p>
+    <div class="hero-cta">
+      <a class="btn btn-brass" href="#reserve">Reserve a table</a>
+      <a class="btn btn-ghost" href="#menu">Browse the menu</a>
+    </div>
+  </div>
+  <div class="rail">
+    <div class="wrap rail-in">
+      <div class="rail-cell">
+        <div class="rail-k">Right now</div>
+        <div class="rail-v live"><span class="dot"></span><span id="openState">Serving dinner</span><small id="openUntil">Kitchen open until 9:00</small></div>
+      </div>
+      <div class="rail-cell">
+        <div class="rail-k">Walk-in wait</div>
+        <div class="rail-v"><span id="waitNow">25&ndash;35 min</span><small>Downstairs dining &amp; bar</small></div>
+      </div>
+      <div class="rail-cell">
+        <div class="rail-k">Next table for two</div>
+        <div class="rail-v"><span id="nextSlot">7:15 PM</span><small>Upstairs, tonight</small></div>
+      </div>
+      <div class="rail-cell">
+        <div class="rail-k">Order to go</div>
+        <div class="rail-v">About 20 min<small>Lunch &amp; dinner menus</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plates" id="plates">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script-tag">From the pass</span>
+      <h2>A few things worth driving for</h2>
+      <p>Photographed in our kitchen. Tap any plate to find it on the menu.</p>
+    </div>
+    <div class="plate-grid" id="plateGrid"></div>
+  </div>
+</section>
+
+<section class="sec sec-dark" id="about">
+  <div class="wrap about">
+    <div>
+      <p class="pull">Every dish leaves an entirely scratch kitchen &mdash; down to the steaks Chef Carson butchers himself.</p>
+      <p>Carson's Table is a Northshore restaurant serving fresh Louisiana cuisine with thoughtfully sourced ingredients, house-made sauces, and seasonal specials. The bar program features tableside cocktail service and an extensive wine list curated by our in-house sommelier, with selections for both a weeknight dinner and an occasion worth marking.</p>
+      <p>Dine downstairs in the relaxed, woodsy room and bar, or upstairs for something more intimate and refined. We also host wine dinners and show work by local artists.</p>
+    </div>
+    <div class="chef-card">
+      <img class="monogram" src="assets/img/mono.webp" alt="" aria-hidden="true">
+      <img class="portrait" src="assets/img/carson.webp" alt="Chef Carson Wandell at Carson's Table">
+      <h3>Carson Wandell</h3>
+      <div class="role">Chef &amp; Owner</div>
+      <p>After leading award-winning kitchens for more than twenty years, Chef Carson returned to the Northshore to open his own restaurant near his family. His menu reflects the flavors of Louisiana through modern technique, with seasonal ingredients from local producers behind dishes that feel comforting, familiar, and quietly elevated.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="menu">
+  <div class="wrap">
+    <div class="menu-top">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="script-tag">From the kitchen</span>
+        <h2>Order online or plan your visit</h2>
+        <p>Browse every dish, add what you want to a to-go order, or bring the list with you to the table. Lunch is served 11&nbsp;AM to 2&nbsp;PM; dinner begins at 4.</p>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" id="tabs"></div>
+
+    <div class="menu-tools">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input id="q" type="search" placeholder="Search dishes, ingredients, grapes" aria-label="Search the menu">
+      </div>
+      <div class="chips" id="dietChips"></div>
+    </div>
+
+    <div class="menu-layout">
+      <nav class="coursenav" id="coursenav" aria-label="Menu sections"></nav>
+      <div id="courses"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="wineband">
+  <img src="assets/img/winepour.webp" alt="A glass of red being poured at the bar" loading="lazy">
+  <div class="bin">
+    <h3>An extensive list, poured by people who know it</h3>
+    <p>Chosen by our sommelier, with most bottles offered by the glass and the half glass &mdash; so a table can taste its way through dinner.</p>
+    <a class="btn btn-brass" href="#wine">See the wine list</a>
+  </div>
+</section>
+
+<section class="sec sec-dark" id="reserve">
+  <div class="wrap res">
+    <div class="res-copy">
+      <div class="sec-head">
+        <span class="script-tag">Have a seat</span>
+        <h2>Reserve a table</h2>
+        <p>Reservations are recommended for dinner. Lunch guests are welcome to walk in and take the downstairs dining room and bar at their leisure.</p>
+      </div>
+      <div class="waitcard">
+        <div class="wk">Walk-in wait, updated live</div>
+        <div class="wv" id="waitBig">25&ndash;35 min</div>
+        <p>Pulled from the host stand. Add your name now and we'll text you when your table is close &mdash; no need to stand in the doorway.</p>
+        <button class="btn btn-brass" id="waitlistBtn">Join the waitlist</button>
+      </div>
+      <p style="font-size:14px;color:#8FA089;margin-top:22px">Prefer to call? <a href="tel:+19852317216" style="color:#C3CFBE">(985) 231-7216</a>. A corkage fee applies for guests bringing their own wine.</p>
+    </div>
+
+    <div class="panel">
+      <div id="resForm">
+        <h3>Book your table</h3>
+        <div class="sub">Dinner service, Monday through Saturday.</div>
+        <div class="row2">
+          <div class="field">
+            <label for="party">Party size</label>
+            <select id="party">
+              <option>1 guest</option><option selected>2 guests</option><option>3 guests</option>
+              <option>4 guests</option><option>5 guests</option><option>6 guests</option>
+              <option>7 guests</option><option>8 guests</option><option>9+ (we'll call you)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input type="date" id="date">
+          </div>
+        </div>
+        <div class="field">
+          <label>Time</label>
+          <div class="slots" id="slots"></div>
+        </div>
+        <div class="field">
+          <label>Where you'd like to sit</label>
+          <div class="seatopts">
+            <button class="seat" data-seat="Downstairs" aria-pressed="true"><b>Downstairs</b><span>Relaxed, woodsy dining room and bar</span></button>
+            <button class="seat" data-seat="Upstairs" aria-pressed="false"><b>Upstairs</b><span>Intimate and more formal</span></button>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="rname">Name</label><input id="rname" placeholder="First and last"></div>
+          <div class="field"><label for="rphone">Mobile</label><input id="rphone" placeholder="(985) 555-0134"></div>
+        </div>
+        <div class="field">
+          <label for="rnote">Anything we should know?</label>
+          <textarea id="rnote" placeholder="Allergies, anniversary, high chair, wine we should decant"></textarea>
+        </div>
+        <button class="btn btn-solid" style="width:100%;padding:15px" id="bookBtn">Confirm reservation</button>
+      </div>
+
+      <div class="res-ok" id="resOk">
+        <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4.5 4.5L19 7"/></svg></div>
+        <h4>Your table is held</h4>
+        <p>A confirmation text is on its way. Reply to that message any time to change or cancel.</p>
+        <div class="det" id="resDetail"></div>
+        <button class="btn btn-line" id="resAgain">Book another table</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-paper" id="visit">
+  <div class="wrap">
+    <div class="sec-head"><span class="script-tag">Find us</span><h2>Visit Carson's Table</h2></div>
+    <div class="visit">
+      <div>
+        <h4>Hours</h4>
+        <div class="hourrow"><span>Lunch, Monday&ndash;Saturday</span><b>11:00 AM &ndash; 2:00 PM</b></div>
+        <div class="hourrow"><span>Dinner, Monday&ndash;Thursday</span><b>4:00 &ndash; 9:00 PM</b></div>
+        <div class="hourrow"><span>Dinner, Friday &amp; Saturday</span><b>4:00 &ndash; 10:00 PM</b></div>
+        <div class="hourrow"><span>Sunday</span><b>Closed</b></div>
+      </div>
+      <div>
+        <h4>Where to find us</h4>
+        <img src="assets/img/exterior-sharp.webp" alt="Carson's Table on Lafitte Street" style="width:100%;border:1px solid var(--line);margin-bottom:16px;display:block" loading="lazy">
+        <p class="big">690 Lafitte St<br>Mandeville, LA 70448</p>
+        <p>At the foot of the Mandeville Trailhead.<br><a href="https://maps.app.goo.gl/RF7XENzk4R38rvNj6" target="_blank" rel="noopener">Get directions</a></p>
+      </div>
+      <div>
+        <h4>Good to know</h4>
+        <p>Business casual is the norm, though you're welcome to dress for the occasion. A corkage fee applies to bottles brought from home.</p>
+        <p><a href="tel:+19852317216">(985) 231-7216</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img src="assets/img/wordmark.webp" alt="Carson's Table"></a>
+        <p style="margin-top:14px;max-width:34ch">690 Lafitte St, Mandeville, LA 70448<br><a href="tel:+19852317216">(985) 231-7216</a></p>
+      </div>
+      <nav>
+        <a href="#menu">Menus</a><a href="#wine">Wine</a><a href="#reserve">Reservations</a>
+        <a href="#visit">Hours</a><a href="#about">Our table</a>
+        <a href="https://www.instagram.com/carsonstablemandeville/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61586714009705" target="_blank" rel="noopener">Facebook</a>
+      </nav>
+    </div>
+    <div class="foot-b">
+      <span>&copy; 2026 Carson's Table</span>
+      <span>Design concept &mdash; not the live site</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer" id="drawer" aria-label="Your order">
+  <div class="dh">
+    <h3>Your order</h3>
+    <button class="x" id="closeDrawer" aria-label="Close">&times;</button>
+  </div>
+  <div class="dbody" id="cartBody"></div>
+  <div class="dfoot" id="cartFoot"></div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="mcard">
+    <img id="mPhoto" alt="">
+    <header>
+      <h3 id="mTitle"></h3>
+      <div class="md" id="mDesc"></div>
+    </header>
+    <div class="mbody" id="mBody"></div>
+    <div class="mfoot">
+      <div class="qty">
+        <button id="mMinus" aria-label="One fewer">&minus;</button>
+        <span id="mQty">1</span>
+        <button id="mPlus" aria-label="One more">+</button>
+      </div>
+      <button class="btn btn-solid" id="mAdd">Add to order</button>
+    </div>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="lb-x" id="lbX" aria-label="Close photo">&times;</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<div id="toast"></div>
+
+<script src="assets/js/images.js"></script>
+<script src="assets/js/menu-data.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
