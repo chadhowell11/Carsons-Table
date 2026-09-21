@@ -40,6 +40,7 @@ assets/js/menu-data.js  every dish, price, description, modifier group
 assets/js/app.js      rendering, filters, cart, modal, reservations, lightbox, clock
 assets/img/           logos, dish photos, exteriors (WebP), icon (PNG)
 scripts/add-photo.py  helper to generate the image pair for a new dish
+scripts/make-icon.py  regenerates favicon.png and icon-180.png from mono.webp
 docs/                 decisions and roadmap
 private/              engagement context — gitignored, do not commit
 ```
