@@ -31,7 +31,7 @@ It is a **demo**, not the restaurant's live site. Nothing submits anywhere.
 ## Structure
 
 ```
-index.html            markup only — no inline styles beyond the hero background var
+index.html            markup only — no inline styles
 robots.txt            disallow all
 .nojekyll             tells Pages to serve files as-is
 assets/css/site.css   all styling
@@ -40,6 +40,7 @@ assets/js/menu-data.js  every dish, price, description, modifier group
 assets/js/app.js      rendering, filters, cart, modal, reservations, lightbox, clock
 assets/img/           logos, dish photos, exteriors (WebP), icon (PNG)
 scripts/add-photo.py  helper to generate the image pair for a new dish
+scripts/make-icon.py  regenerates favicon.png and icon-180.png from mono.webp
 docs/                 decisions and roadmap
 private/              engagement context — gitignored, do not commit
 ```
@@ -65,6 +66,12 @@ poorly on cream ones — that's why the header, hero and footer are dark.
 There is deliberately **no script font** in the CSS. An earlier version used Parisienne for
 section headers and it fought with the brush script inside the logo. Two script faces on a
 page read as a mistake. Section eyebrows use Fraunces italic in sage instead.
+
+**Don't put `url()` inside a CSS custom property set from HTML.** The hero photo used
+to be a `--heroimg` var on the `<section>`, and browsers resolved that path relative to
+`site.css` rather than the document — it 404'd as `assets/css/assets/img/...` and the
+hero silently rendered as flat pine. The path now lives in `site.css` where a relative
+url reads the way it looks.
 
 **Colors are tokens.** Use `var(--surface)`, `var(--text)`, `var(--muted)`, `var(--line)`.
 There's a dark-mode token override block; hardcoding hex breaks it.

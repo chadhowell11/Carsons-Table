@@ -47,6 +47,28 @@ reservations section exist to make one argument visible: the host stand and the 
 should be connected. The owner raised that gap unprompted. Without the rail, that part of
 the conversation is abstract.
 
+## The favicon is the inverted badge, not the cream one
+
+The cream oval badge is the primary logo, but it makes a poor favicon: at 16px on a
+light browser tab strip, a cream disc on near-white is close to invisible, and the
+monogram inside it is too fine to carry the shape on its own. The tab icon is instead
+a dark green disc with a gold T and a cream C — the treatment the restaurant already
+paints on its own dining room wall, visible behind Carson in `assets/img/carson.webp`.
+Same artwork, lifted out of `mono.webp` and recoloured; no new greens.
+
+An earlier pass shipped the faithful cream version and it did read weakly at small
+sizes. `scripts/make-icon.py` regenerates both files, so switching back is a colour
+swap, not a redraw.
+
+## The hero photo path lives in CSS, not in the markup
+
+It was an inline `--heroimg` custom property on the hero `<section>`. Browsers resolve
+a `url()` inside a custom property against the stylesheet that *consumes* it, not the
+document that declares it, so the path became `assets/css/assets/img/exterior.webp`,
+404'd, and the hero quietly rendered as flat pine with no photo. Nothing errored and
+nothing looked obviously broken, which is why it survived. The path is now in
+`site.css` next to the rest of the hero treatment.
+
 ## No script font in CSS
 
 The logo already contains a brush script. A second script face for section headers competed

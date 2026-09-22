@@ -108,7 +108,7 @@ nav.main a:hover{color:#fff;border-bottom-color:var(--brass)}
 /* ---------- hero ---------- */
 .hero{background:var(--pine);color:#EDEADC;position:relative;overflow:hidden;
   padding:clamp(56px,9vw,104px) 0 0}
-.hero::before{content:"";position:absolute;inset:0;background-image:var(--heroimg);
+.hero::before{content:"";position:absolute;inset:0;background-image:url(../img/exterior.webp);
   background-size:cover;background-position:center 40%;opacity:.55}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(23,48,15,.70) 0%,rgba(23,48,15,.80) 48%,var(--pine) 97%)}
