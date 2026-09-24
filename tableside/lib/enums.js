@@ -46,6 +46,8 @@ export const RESERVATION_SOURCES = /** @type {const} */ (['web', 'phone', 'walk_
 export const NOTIFICATION_CHANNELS = /** @type {const} */ (['email', 'sms']);
 export const NOTIFICATION_STATUSES = /** @type {const} */ (['pending', 'sent', 'failed', 'suppressed']);
 
+export const EMAIL_SUPPRESSION_REASONS = /** @type {const} */ (['bounce', 'complaint', 'unsubscribe', 'manual']);
+
 export const AUDIT_ACTIONS = /** @type {const} */ (['insert', 'update', 'delete']);
 
 /**
@@ -82,5 +84,6 @@ export const ENUM_COLUMNS = Object.freeze({
   NOTIFICATION_CHANNELS: ['notifications_outbox.channel'],
   NOTIFICATION_STATUSES: ['notifications_outbox.status'],
   AUDIT_ACTIONS: ['platform.audit_log.action'],
+  EMAIL_SUPPRESSION_REASONS: ['platform.email_suppressions.reason'],
   FEATURES: [], // stored as keys of platform.tenants.features jsonb; normalized in lib/tenants.js
 });

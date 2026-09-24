@@ -18,7 +18,7 @@ export function tenantHead(tenant) {
 const SHELL_CSS = `
 *{box-sizing:border-box}body{margin:0;background:var(--t-bg);color:var(--t-fg);font:16px/1.5 var(--t-body)}
 header{background:var(--t-field);color:var(--t-on-field);padding:28px 16px}
-header div,main{max-width:64rem;margin:0 auto}
+header div,main div{max-width:64rem;margin:0 auto}
 h1{font:500 clamp(28px,5vw,44px)/1.1 var(--t-display);margin:0}
 .eyebrow{font:italic 400 15px var(--t-display);color:var(--t-accent);margin:0 0 6px}
 main{padding:28px 16px}
@@ -38,7 +38,7 @@ ${tenantHead(tenant)}
 </head>
 <body data-tenant="${escapeHtml(tenant.slug)}">
 <header><div><p class="eyebrow">Welcome to</p><h1>${escapeHtml(tenant.name)}</h1></div></header>
-<main><p class="note">Our new website is being set up. Please check back soon.</p></main>
+<main><div><p class="note">Our new website is being set up. Please check back soon.</p></div></main>
 </body>
 </html>`;
 }

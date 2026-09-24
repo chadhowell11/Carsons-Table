@@ -43,6 +43,9 @@ scripts/add-photo.py  helper to generate the image pair for a new dish
 scripts/make-icon.py  regenerates favicon.png and icon-180.png from mono.webp
 docs/                 decisions and roadmap
 private/              engagement context — gitignored, do not commit
+tableside/            the multi-tenant platform (Node) — separate rules in tableside/CLAUDE.md.
+                      It doesn't touch the prototype, but if merged to main, Pages will serve its
+                      source as static files (no secrets live there). See tableside/docs/DECISIONS.md D10.
 ```
 
 ## Brand

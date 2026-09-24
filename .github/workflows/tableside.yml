@@ -1,0 +1,37 @@
+name: tableside
+on:
+  push:
+    paths: ['tableside/**', '.github/workflows/tableside.yml']
+  pull_request:
+    paths: ['tableside/**', '.github/workflows/tableside.yml']
+
+defaults:
+  run:
+    working-directory: tableside
+
+jobs:
+  unit-static:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: tableside/package-lock.json }
+      - run: npm ci
+      - run: npm test
+
+  db-probes:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: tableside/package-lock.json }
+      - run: npm ci
+      - name: Start the local Supabase stand-in (Postgres, PostgREST, GoTrue, gateway)
+        run: |
+          echo "/usr/lib/postgresql/16/bin" >> "$GITHUB_PATH"
+          PATH="/usr/lib/postgresql/16/bin:$PATH" bash scripts/dev-stack/start.sh
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:db
+      - run: npm run test:probes
+      - if: failure()
+        run: tail -n 50 .dev-stack/logs/*.log
