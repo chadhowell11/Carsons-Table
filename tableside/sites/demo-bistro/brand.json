@@ -1,0 +1,4 @@
+{ "preset":"coastal", "scheme":"light",
+  "palette": { "bg":"#F1F5F9", "surface":"#FFFFFF", "fg":"#1F2937", "muted":"#64748B", "line":"#CBD5E1",
+               "accent":"#0F766E", "accent2":"#99F6E4", "dark":"#1F2937", "black":"#0B1120" },
+  "type": { "display":"Playfair Display", "body":"Source Sans 3" }, "radius":"8px" }

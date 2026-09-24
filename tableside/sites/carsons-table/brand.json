@@ -1,0 +1,5 @@
+{ "preset":"coastal", "scheme":"dark-dominant",
+  "palette": { "bg":"#F6F1E6", "surface":"#FFFFFF", "fg":"#17300F", "muted":"#5C6B52", "line":"#D8CCA8",
+               "accent":"#78905F", "accent2":"#D8CCA8", "dark":"#234719", "black":"#080C06" },
+  "type": { "display":"Fraunces", "body":"Karla" }, "radius":"2px",
+  "logo":"/sites/carsons-table/wordmark.webp", "favicon":"/sites/carsons-table/favicon.png", "ogImage":"/sites/carsons-table/exterior.webp" }

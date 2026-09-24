@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin</title>
+<!--BRAND-HEAD-->
+<link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand-row flush"><span class="mark" data-brand-mark></span><div><b data-brand-name></b><small>Staff admin</small></div></div>
+  <button class="abtn" id="signout" type="button">Sign out</button>
+</header>
+<main class="wrap">
+  <p class="msg" id="msg" role="status" aria-live="polite">Loading…</p>
+  <section class="panel" id="me" hidden>
+    <h1>Signed in</h1>
+    <dl>
+      <dt>Email</dt><dd id="me-email"></dd>
+      <dt>Role</dt><dd id="me-role"></dd>
+      <dt>Restaurant</dt><dd id="me-tenant"></dd>
+      <dt>Features on</dt><dd id="me-features"></dd>
+    </dl>
+    <p>The menu editor, specials, events and hours arrive in Phase 1.</p>
+  </section>
+</main>
+<script src="/admin/vendor/supabase.js"></script>
+<script type="module" src="/admin/js/index.js"></script>
+</body>
+</html>

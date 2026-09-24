@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in</title>
+<!--BRAND-HEAD-->
+<link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="auth">
+<main class="auth-card">
+  <div class="brand-row"><span class="mark" data-brand-mark></span><div><b data-brand-name></b><small>Staff admin</small></div></div>
+
+  <section data-state="form">
+    <h1>Sign in</h1>
+    <form id="login" novalidate>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password">
+      <div class="actions">
+        <button class="abtn primary" id="signin" type="submit">Sign in</button>
+        <button class="abtn" id="magic" type="button">Email me a sign-in link</button>
+      </div>
+    </form>
+  </section>
+
+  <section data-state="not-member" hidden>
+    <h1>No access here</h1>
+    <p class="notice" id="not-member-msg"></p>
+    <p>Signed in as <b id="who"></b>. If you work here, ask the owner to add you on the Staff page.</p>
+    <div class="actions"><button class="abtn" id="signout" type="button">Sign out</button></div>
+  </section>
+
+  <p class="msg" id="msg" role="status" aria-live="polite"></p>
+</main>
+<script src="/admin/vendor/supabase.js"></script>
+<script type="module" src="/admin/js/login.js"></script>
+</body>
+</html>
